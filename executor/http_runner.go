@@ -186,11 +186,11 @@ func makeProxyClient(dialTimeout time.Duration) *http.Client {
 			Proxy: http.ProxyFromEnvironment,
 			DialContext: (&net.Dialer{
 				Timeout:   dialTimeout,
-				KeepAlive: 10 * time.Second,
+				KeepAlive: 0,
 			}).DialContext,
 			MaxIdleConns:          100,
 			MaxIdleConnsPerHost:   100,
-			DisableKeepAlives:     false,
+			DisableKeepAlives:     true,
 			IdleConnTimeout:       500 * time.Millisecond,
 			ExpectContinueTimeout: 1500 * time.Millisecond,
 		},
