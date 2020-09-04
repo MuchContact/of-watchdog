@@ -43,9 +43,8 @@ this line is short
 
 	expected := fmt.Sprintf(`%s
 %sthis line is more than 32 bytes long
-%s
 %sthis line is short
-`, now, now, now, now)
+`, now, now, now)
 
 	if ouput != expected {
 		t.Fatalf("incorrect log output: expected \n%q, got \n%q", expected, ouput)
